@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+  text-align: center;
+  overflow: hidden;
+  background-color: rgb(44, 40, 40);
+  font-family: Roboto;
+}
+
+#Arrows{
+  opacity: 1;
+  #a_evaporation path{
+     animation: a_evap 0.8s infinite alternate ease-in-out;
+   }
+   #a_transpiration{
+     animation: a_evap 0.8s infinite alternate ease-in-out;
+   }
+   #a_condensation{
+     animation: a_evap 0.8s infinite alternate ease-in-out;
+   }
+   #a_precipitation{
+     animation: a_evap 0.8s infinite alternate ease-in-out;
+   }
+   #a_runoff{
+     animation: a_evap 0.8s infinite alternate ease-in-out;
+   }
+   #a_perculation{
+     animation: a_evap 0.8s infinite alternate ease-in-out;
+   }
+}
+
+.wave{
+  animation: wave 4s infinite alternate ease-in-out;
+}
+
+#rain{
+  path{
+    animation: rain 2s infinite alternate linear;
+    &:nth-child(1){animation-delay: 0.0s;}
+    &:nth-child(2){animation-delay: 1.7s;}
+    &:nth-child(3){animation-delay: 0.2s;}
+    &:nth-child(4){animation-delay: 2.1s;}
+    &:nth-child(5){animation-delay: 0.7s;}
+    &:nth-child(6){animation-delay: 1.2s;}
+    &:nth-child(7){animation-delay: 0.1s;}
+    &:nth-child(8){animation-delay: 1.5s;}
+  }
+} 
+
+#clouds {
+  path{
+    animation: clouds 8.5s infinite linear;
+    &:nth-child(1){animation-delay: 0s;}
+    &:nth-child(2){animation-delay: -4s;}
+  }
+}
+ 
+@keyframes rain {
+  0%   { opacity: 1;}
+  20%   { opacity: 0.2;}
+  70%   { opacity: 1;}
+  100% { opacity: 0.2; }
+}
+@keyframes wave {
+  0%   { opacity: 0.5; transform: translate(20px, 10px)}
+  50% { opacity: 1;}
+  100% { opacity: 0.5; transform: translate(-40px, -20px)}
+}
+
+@keyframes a_evap {
+  0% { opacity: 0.2}
+  65% { opacity: 1;}
+}
+
+@keyframes clouds {
+  0%   { opacity: 1; transform: translate(-20px, 0px)}
+  25%  { opacity: 1; transform: translate(0px, 20px)}
+  50%  { opacity: 1; transform: translate(20px, 10px)}
+  75%  { opacity: 1; transform: translate(0px, -20px)}
+  100% { opacity: 1; transform: translate(-20px, 0px)}
+}
